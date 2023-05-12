@@ -50,7 +50,8 @@ Please report:
 Run with administrator rights
 
 ```batch
-sysmon.exe -accepteula -i sysmonconfig-export.xml
+sysmon.exe -accepteula 
+sysmon.exe -i sysmonconfig-export.xml
 ```
 
 ### Update existing configuration
