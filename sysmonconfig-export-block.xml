@@ -1530,6 +1530,10 @@
 			<Image condition="image">mspaint.exe</Image>
 		</FileBlockExecutable>
 	</RuleGroup>
-
+		
+	<!--SYSMON EVENT ID 28 : FILE BLOCK SHREDDING [FileBlockShredding]-->
+		<!--EVENT 28: "File Block Shredding"-->
+		<!--COMMENT: This event is generated when Sysmon detects and blocks file shredding from tools such as SDelete.-->
+		
 	</EventFiltering>
 </Sysmon>
