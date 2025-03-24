@@ -5,7 +5,7 @@
 	Source license:	Creative Commons Attribution 4.0 | You may privatize, fork, edit, teach, publish, or deploy for commercial use - with attribution in the text.
 
 	Forked project:	https://github.com/Neo23x0/sysmon-config
-	Forked Last Updated: 2025-03-24
+	Fork Last Updated: 2025-03-24
 
 	REQUIRED: Sysmon version 13 or higher (due to changes in syntax and bug-fixes)
 		https://docs.microsoft.com/en-us/sysinternals/downloads/sysmon
