@@ -990,7 +990,6 @@
 				<PipeName condition="begin with">\netlogon_</PipeName>
 				<PipeName condition="begin with">\srvsvc_</PipeName>
 				<PipeName condition="begin with">\lsarpc_</PipeName>
-				<PipeName condition="begin with">\wkssvc_</PipeName>
 				<!-- Havoc C2 default -->
 				<PipeName condition="begin with">\demon_pipe</PipeName>
 				<!-- Malleable C2 profiles https://svch0st.medium.com/guide-to-named-pipes-and-hunting-for-cobalt-strike-pipes-dc46b2c5f575 -->
@@ -1001,8 +1000,6 @@
 				<PipeName condition="begin with">\mypipe-f</PipeName>
 				<PipeName condition="begin with">\mypipe-h</PipeName>
 				<PipeName condition="begin with">\windows.update.manager</PipeName>
-				<PipeName condition="begin with">\ntsvcs_</PipeName>
-				<PipeName condition="begin with">\scerpc_</PipeName>
 				<!-- Malleable C2 profiles https://gist.github.com/MHaggis/6c600e524045a6d49c35291a21e10752 -->
 				<PipeName condition="begin with">\demoagent_</PipeName>
 				<PipeName condition="begin with">\PGMessagePipe</PipeName>
@@ -1014,6 +1011,7 @@
 				<PipeName condition="begin with">\f53f</PipeName>
 				<PipeName condition="begin with">\rpc_</PipeName>
 				<PipeName condition="begin with">\spoolss_</PipeName>
+                <PipeName condition="begin with">\Winsock2\CatalogChangeListener</PipeName>
 				<PipeName condition="begin with">\win_svc</PipeName>
 				<PipeName condition="begin with">\SearchTextHarvester</PipeName>
 				<PipeName condition="begin with">\adschemerpc</PipeName> <!-- Turla HyperStack - https://www.accenture.com/us-en/blogs/cyber-defense/turla-belugasturgeon-compromises-government-entity -->
@@ -1021,6 +1019,15 @@
 				<PipeName condition="begin with">\bc367</PipeName> <!-- Pacifier - https://download.bitdefender.com/resources/files/News/CaseStudies/study/115/Bitdefender-Whitepaper-PAC-A4-en-EN1.pdf -->
 				<PipeName condition="begin with">\bc31a7</PipeName> <!-- Pacifier - https://download.bitdefender.com/resources/files/News/CaseStudies/study/115/Bitdefender-Whitepaper-PAC-A4-en-EN1.pdf -->
 				<PipeName condition="begin with">\testPipe</PipeName> <!-- Emissary Panda Hyerbri - https://unit42.paloaltonetworks.com/emissary-panda-attacks-middle-east-government-sharepoint-servers/ -->
+                <PipeName condition="begin with">\demoagent_</PipeName>
+                <!--RMM Pipe-->
+                <PipeName condition="is">\adprinterpipe</PipeName>
+                <!--Suspicious Location of Image-->
+                <Image condition="contains">:\PerfLogs\</Image>
+                <Image condition="contains">:\Users\Public\</Image>
+                <Image condition="contains">:\Windows\System32\Tasks\</Image>
+                <Image condition="contains">:\Windows\Tasks\</Image>
+                <Image condition="contains">\Microsoft\Windows\Start Menu\Programs\Startup\</Image>
 				<!-- these are standard pipes that appear frequently but the Sigma rules use RE to match on malicious pipes that use the common names as a prefix -->
 				<PipeName condition="begin with">\scerpc</PipeName>
 				<PipeName condition="begin with">\ntsvcs</PipeName>
@@ -1032,6 +1039,14 @@
 					<EventType condition="is">ConnectPipe</EventType>
 					<PipeName condition="is">\MICROSOFT##WID\tsql\query</PipeName> <!-- https://github.com/SigmaHQ/sigma/pull/2128 -->
 				</Rule>
+                <PipeName condition="contains">\coerced\</PipeName> <!--https://blog.hackvens.fr/articles/CoercedPotato.html-->
+                <PipeName condition="contains">thisispipe</PipeName> <!-- DiagTrackEoP Default Named Pipe-->
+                <PipeName condition="contains">\pipe\</PipeName> <!--EfsPotato Named Pipe Creation-->
+                <PipeName condition="contains any">\imposecost;\imposingcost</PipeName> <!--Koh Default Named Pipe-->
+                <PipeName condition="begin with">\PAExec</PipeName> <!--PAExec default named pipe-->
+                <PipeName condition="contains">\RemCom</PipeName> <!--RemCom Default Named Pipe-->
+                <PipeName condition="contains">\PSEXESVC</PipeName> <!--PsExec Tool PipeName-->
+                <PipeName condition="contains">\PSEXECSVC</PipeName> <!--Implementation of PsExec in another form like python, CSharp etc-->
 			</PipeEvent>
 		</RuleGroup>
 		<!-- Common Pipe Names to would appear very often in -->
@@ -1041,6 +1056,14 @@
 				<PipeName condition="is">\scerpc</PipeName>
 				<PipeName condition="is">\ntsvcs</PipeName>
 				<PipeName condition="is">\wkssvc</PipeName>
+                <PipeName condition="is">\MsFteWds</PipeName>
+                <PipeName condition="is">\PGMessagePipe</PipeName>
+                <PipeName condition="is">\SearchTextHarvester</PipeName>
+                <PipeName condition="is">\spoolss</PipeName>
+                <PipeName condition="is">\srvsvc</PipeName>
+                <!--Aurora Default Pipe-->
+                <Image condition="end with">\aurora-agent-64.exe</Image>
+                <Image condition="end with">\aurora-agent.exe</Image>
 			</PipeEvent>
 		</RuleGroup>
 
