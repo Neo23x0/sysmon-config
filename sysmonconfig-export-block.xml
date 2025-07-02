@@ -3,7 +3,6 @@
 	Source project:	https://github.com/SwiftOnSecurity/sysmon-config
 	Source license:	Creative Commons Attribution 4.0 | You may privatize, fork, edit, teach, publish, or deploy for commercial use - with attribution in the text.
 
-
 	WARNING: THIS CONFIG INCLUDES BLOCKING RULES THAT MAY CAUSE ISSUES ENDSYSTEMS!
 	         Test this configuration intensively before using it on productive systems
 
@@ -11,9 +10,6 @@
 
 	REQUIRED: Sysmon version 14 or higher (due to changes in syntax and bug-fixes)
 		https://docs.microsoft.com/en-us/sysinternals/downloads/sysmon
-
-	Forked project:	https://github.com/Neo23x0/sysmon-config
-	Fork Last Updated: 2025-03-24
 -->
 
 <Sysmon schemaversion="4.90">
