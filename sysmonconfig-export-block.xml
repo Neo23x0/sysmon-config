@@ -992,6 +992,7 @@
 				<Rule groupRelation="and"> <!-- Some interesting ConnectPipe events that we want to include -->
 					<EventType condition="is">ConnectPipe</EventType>
 					<PipeName condition="is">\MICROSOFT##WID\tsql\query</PipeName> <!-- https://github.com/SigmaHQ/sigma/pull/2128 -->
+				</Rule>
 				<PipeName condition="contains">\coerced\</PipeName> <!--https://blog.hackvens.fr/articles/CoercedPotato.html-->
 				<PipeName condition="contains">thisispipe</PipeName> <!-- DiagTrackEoP Default Named Pipe-->
 				<PipeName condition="contains">\pipe\</PipeName> <!--EfsPotato Named Pipe Creation-->
@@ -1000,7 +1001,6 @@
 				<PipeName condition="contains">\RemCom</PipeName> <!--RemCom Default Named Pipe-->
 				<PipeName condition="contains">\PSEXESVC</PipeName> <!--PsExec Tool PipeName-->
 				<PipeName condition="contains">\PSEXECSVC</PipeName> <!--Implementation of PsExec in another form like python, CSharp etc-->
-				</Rule>
 			</PipeEvent>
 		</RuleGroup>
 		<!-- Common Pipe Names to would appear very often in -->
