@@ -843,8 +843,8 @@
 			<TargetObject condition="contains">WOW6432Node\Microsoft\Cryptography\Providers\Trust\</TargetObject> <!-- Important trust registry values to monitor -->
 			<TargetObject condition="contains">Control\Print\Environments\Windows x64\Drivers</TargetObject> <!-- PrinterNightmare coverage -->
             <!--RunMRU annd TypedPaths monitoring to detect potential clickfixing and filefixing attacks-->
-            <TargetObject condition="contains">\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\RunMRU\</TargetObject>
-            <TargetObject condition="contains">\Software\Microsoft\Windows\CurrentVersion\Explorer\TypedPaths\</TargetObject>
+			<TargetObject condition="contains">\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\RunMRU\</TargetObject>
+			<TargetObject condition="contains">\Software\Microsoft\Windows\CurrentVersion\Explorer\TypedPaths\</TargetObject>
 		</RegistryEvent>
 	</RuleGroup>
 
